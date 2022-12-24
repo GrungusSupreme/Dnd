@@ -8,21 +8,22 @@ const character = {
   maxhp : 10,
   ac : 10,
   ab : 1,
-  initiative = 2,
+  initiative : 2,
 
-  str = 16,
-  dex = 12,
-  con = 14,
-  int = 9,
-  wis = 10,
-  cha = 9,
+  str : 16,
+  dex : 12,
+  con : 14,
+  int : 9,
+  wis : 10,
+  cha : 9,
 
-  strmod = 3,
-  dexmod = 1,
-  conmod = 2,
-  intmod = -1,
-  wismod = 0,
-  chamod = -1
+  strmod : 3,
+  dexmod : 1,
+  conmod : 2,
+  intmod : -1,
+  wismod : 0,
+  chamod : -1,
+
 }
 
 
@@ -201,5 +202,4 @@ function survivalCheck() {
 return console.log('This berry seems fine... yeah and this mushroom too... alright... okay... oh boy..., you score a ' + (survival +  character.wismod + roll));
 }
 
-/*Log*/
 
