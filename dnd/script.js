@@ -77,15 +77,21 @@ let weapondmg = (Math.ceil(Math.random() * 8) + strmod);
 
 function initiativeRoll()*/
 
+function roll20(){
+  return (Math.ceil(Math.random() * 20) + ab)
+}
+
 function attackRoll() {
-return console.log('You strike with a ' + (Math.ceil(Math.random() * 20) + ab))}
+return console.log('You strike with a ' + roll20())}
 
 function attack(){
  return console.log('You deal ' + (weapondmg) + ' damage.');
  }
  
 function acrobaticsCheck() {
+  document.getElementById("output").innerHTML = 'Parkour! par! huh Parkour!... you score a ' + (acrobatics + dexmod + (Math.ceil(Math.random() * 20)));
   return console.log('Parkour! par! huh Parkour!... you score a ' + (acrobatics + dexmod + (Math.ceil(Math.random() * 20))));
+
 }
 
 function animalHandleCheck() {
