@@ -1,28 +1,31 @@
 /*Info*/
 
-let name = "Grungus";
-let race = "Half-Orc";
-let clas = "Barbarian";
+const character = {
+  /*Stats*/
+  name : "Grungus",
+  race : "Half-Orc",
+  class : "Barbarian",
+  maxhp : 10,
+  ac : 10,
+  ab : 1,
+  initiative = 2,
 
-/*Stats*/
+  str = 16,
+  dex = 12,
+  con = 14,
+  int = 9,
+  wis = 10,
+  cha = 9,
 
-let hp = 10;
-let ac = 10;
-let ab = 1;
-let initiative = 2;
-let str = 16;
-let dex = 12;
-let con = 14;
-let int = 9;
-let wis = 10;
-let cha = 9;
+  strmod = 3,
+  dexmod = 1,
+  conmod = 2,
+  intmod = -1,
+  wismod = 0,
+  chamod = -1
+}
 
-let strmod = 3;
-let dexmod = 1;
-let conmod = 2;
-let intmod = -1;
-let wismod = 0;
-let chamod = -1;
+
 
 /*Skills*/
 
@@ -71,95 +74,132 @@ Survival (Wis)
 let inventory = ['Bedroll', 'Torch', 'Rope', 'Tent'];
 let equipment = ['Greatsword', 'Leather Armor', 'Skull Helm'];
 let weapons = ['Greatsword'];
-let weapondmg = (Math.ceil(Math.random() * 8) + strmod);
 
 /*Functions
 
 function initiativeRoll()*/
 
+var roll = 0;
+
 function roll20(){
-  return (Math.ceil(Math.random() * 20) + ab)
+  return (Math.ceil(Math.random() * 20))
 }
 
 function attackRoll() {
-return console.log('You strike with a ' + roll20())}
+  roll = roll20();
+return console.log('You strike with a ' + roll)}
 
 function attack(){
- return console.log('You deal ' + (weapondmg) + ' damage.');
+ return console.log('You deal ' + (Math.ceil(Math.random() * 8) +  character.strmod) + ' damage.');
  }
  
 function acrobaticsCheck() {
-  document.getElementById("output").innerHTML = 'Parkour! par! huh Parkour!... you score a ' + (acrobatics + dexmod + (Math.ceil(Math.random() * 20)));
-  return console.log('Parkour! par! huh Parkour!... you score a ' + (acrobatics + dexmod + (Math.ceil(Math.random() * 20))));
-
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'Parkour! par! huh Parkour!... you score a ' + (acrobatics +  character.dexmod + roll);
+  return console.log('Parkour! par! huh Parkour!... you score a ' + (acrobatics +  character.dexmod + roll));
 }
 
 function animalHandleCheck() {
-  return console.log('Your inner spirit tries to calms the creature, you score a ' + (animalHandling + wismod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'Your inner spirit tries to calms the creature, you score a ' + (animalHandling +  character.wismod + roll);
+  return console.log('Your inner spirit tries to calms the creature, you score a ' + (animalHandling +  character.wismod + roll));
 }
 
 function arcanaCheck() {
-  return console.log('You attempt to sense the magic, you score a ' + (arcana + intmod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'You attempt to sense the magic, you score a ' + (arcana +  character.intmod + roll);
+  return console.log('You attempt to sense the magic, you score a ' + (arcana +  character.intmod + roll));
 }
 
 function athleticsCheck() {
-return console.log('You stretch a bit and then go for it, you score a ' + (athletics + strmod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'You stretch a bit and then go for it, you score a ' + (athletics +  character.strmod + roll);
+return console.log('You stretch a bit and then go for it, you score a ' + (athletics +  character.strmod + roll));
 }
 
 function deceptionCheck() {
-return console.log('You flex your eyebrow musceles and try to gaslight them, you score a ' + (deception + chamod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'You flex your eyebrow musceles and try to gaslight them, you score a ' + (deception +  character.chamod + roll);
+return console.log('You flex your eyebrow musceles and try to gaslight them, you score a ' + (deception +  character.chamod + roll));
 }
 
 function historyCheck() {
-return console.log('You pop on your intellectual glassess and think back on the texts you have read on the subject, you score a ' + (history + intmod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'You pop on your intellectual glassess and think back on the texts you have read on the subject, you score a ' + (history +  character.intmod + roll);
+return console.log('You pop on your intellectual glassess and think back on the texts you have read on the subject, you score a ' + (history +  character.intmod + roll));
 }
 
 function insightCheck() {
-return console.log('Vibe check, you score a ' + (insight + wismod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'Vibe check, you score a ' + (insight +  character.wismod + roll);
+return console.log('Vibe check, you score a ' + (insight +  character.wismod + roll));
 }
 
 function intimidationCheck() {
-return console.log('You give a death stare, you score a ' + (intimidation + chamod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'You give a death stare, you score a ' + (intimidation +  character.chamod + roll);
+return console.log('You give a death stare, you score a ' + (intimidation +  character.chamod + roll));
 }
 
 function investigationCheck() {
-return console.log('Magnifying glass in hand you give a schollarly hmmmm, you score a ' + (investigation + intmod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'Magnifying glass in hand you give a schollarly hmmmm, you score a ' + (investigation +  character.intmod + roll);
+return console.log('Magnifying glass in hand you give a schollarly hmmmm, you score a ' + (investigation +  character.intmod + roll));
 }
 
 function medicineCheck() {
-return console.log('Oh god theres blood everywhere, you score a ' + (medicine + wismod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'Oh god theres blood everywhere, you score a ' + (medicine +  character.wismod + roll);
+return console.log('Oh god theres blood everywhere, you score a ' + (medicine +  character.wismod + roll));
 }
 
 function natureCheck() {
-return console.log('Hmm... what an interesting specimen, you score a ' + (nature + intmod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'Hmm... what an interesting specimen, you score a ' + (nature +  character.intmod + roll);
+return console.log('Hmm... what an interesting specimen, you score a ' + (nature +  character.intmod + roll));
 }
 
 function perceptionCheck() {
-return console.log('Wait... wtf is tha?-, you score a ' + (perception + wismod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'Wait... wtf is tha?-, you score a ' + (perception +  character.wismod + roll);
+return console.log('Wait... wtf is tha?-, you score a ' + (perception +  character.wismod + roll));
 }
 
 function performanceCheck() {
-return console.log('You wind up to give em the ol razzle dazzle, you score a ' + (performance + chamod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'You wind up to give em the ol razzle dazzle, you score a ' + (performance +  character.chamod + roll);
+return console.log('You wind up to give em the ol razzle dazzle, you score a ' + (performance +  character.chamod + roll));
 }
 
 function persuasionCheck() {
-return console.log('You feel a compromise bubbling up, oh lord, here it comes, you score a ' + (persuasion + chamod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'You feel a compromise bubbling up, oh lord, here it comes, you score a ' + (persuasion +  character.chamod + roll);
+return console.log('You feel a compromise bubbling up, oh lord, here it comes, you score a ' + (persuasion +  character.chamod + roll));
 }
 
 function religionCheck() {
-return console.log('You chanel your divinites will and attempt to interpret it, you score a ' + (religion + intmod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'You channel your divinites will and attempt to interpret it, you score a ' + (religion +  character.intmod + roll);
+return console.log('You channel your divinites will and attempt to interpret it, you score a ' + (religion +  character.intmod + roll));
 }
 
 function sleightOfHandCheck() {
-return console.log('You try to distract with one hand and act with the other, you score a ' + (sleightOfHand + dexmod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'You try to distract with one hand and act with the other, you score a ' + (sleightOfHand +  character.dexmod + roll);
+return console.log('You try to distract with one hand and act with the other, you score a ' + (sleightOfHand +  character.dexmod + roll));
 }
 
 function stealthCheck() {
-return console.log('You tiptoe with all your might, you score a ' + (stealth + dexmod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'You tiptoe with all your might, you score a ' + (stealth +  character.dexmod + roll);
+return console.log('You tiptoe with all your might, you score a ' + (stealth +  character.dexmod + roll));
 }
 
 function survivalCheck() {
-return console.log('This berry seems fine... yeah and this mushroom too... alright... okay... oh boy..., you score a ' + (survival + wismod + (Math.ceil(Math.random() * 20))));
+  roll = roll20();
+  document.getElementById("output").innerHTML = 'This berry seems fine... yeah and this mushroom too... alright... okay... oh boy..., you score a ' + (survival +  character.wismod + roll);
+return console.log('This berry seems fine... yeah and this mushroom too... alright... okay... oh boy..., you score a ' + (survival +  character.wismod + roll));
 }
 
 /*Log*/
+
