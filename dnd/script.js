@@ -76,9 +76,11 @@ let inventory = ['Bedroll', 'Torch', 'Rope', 'Tent'];
 let equipment = ['Greatsword', 'Leather Armor', 'Skull Helm'];
 let weapons = ['Greatsword'];
 
-/*Functions
+/*Functions*/
 
-function initiativeRoll()*/
+function initiativeRoll(){
+  return (Math.ceil(Math.random() * 20)) + character.initiative;
+}
 
 var roll = 0;
 
@@ -203,3 +205,9 @@ return console.log('This berry seems fine... yeah and this mushroom too... alrig
 }
 
 
+function combat(player,enemy){
+  var pHealth = player.maxhp;
+  var pInit
+  
+  var eHe
+}
