@@ -4,6 +4,8 @@
     <title>Character Creation Form</title>
     
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <script type="text/javascript" src="form.js"></script>
+
     <style>
       html, body {
       min-height: 100%;
@@ -68,16 +70,18 @@
       <form action="/index.html">
         <h1>Create Your Character</h1>
         <div class="info">
-          <input class="fname" type="text" name="name" placeholder="Name">
-          <input type="text" name="name" placeholder="Race">
-          <input type="text" name="name" placeholder="Class">
+          <input class="fname" type="text" name="name" placeholder="Name" id="nameInput">
+          <input type="text" name="name" placeholder="Race" id="raceInput">
+          <input type="text" name="name" placeholder="Class" id="classInput">
         </div>
         <p>Extra</p>
         <div>
           <textarea rows="4"></textarea>
         </div>
-        <button type="submit" href="/index.html">Submit</button>
+        <button type="submit" href="/index.html" onclick="savename()">Submit</button>
+
+        
       </form>
-    </div>
+      </div>
   </body>
 </html>
