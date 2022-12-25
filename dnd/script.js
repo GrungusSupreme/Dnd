@@ -22,7 +22,7 @@ const character = {
   conmod : 2,
   intmod : -1,
   wismod : 0,
-  chamod : -1,
+  chamod : -1
 
 }
 
