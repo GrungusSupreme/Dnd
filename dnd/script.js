@@ -79,7 +79,10 @@ let weapons = ['Greatsword'];
 /*Functions*/
 
 function initiativeRoll(){
-  return (Math.ceil(Math.random() * 20)) + character.initiative;
+  var initiative = (Math.ceil(Math.random() * 20)) + character.initiative;
+  document.getElementById("output").innerHTML = 'Roll for initiative! You got a ' + initiative;
+  return initiative;
+
 }
 
 var roll = 0;
@@ -204,10 +207,3 @@ function survivalCheck() {
 return console.log('This berry seems fine... yeah and this mushroom too... alright... okay... oh boy..., you score a ' + (survival +  character.wismod + roll));
 }
 
-
-function combat(player,enemy){
-  var pHealth = player.maxhp;
-  var pInit
-  
-  var eHe
-}
