@@ -23,7 +23,6 @@ const character = {
   intmod : -1,
   wismod : 0,
   chamod : -1
-
 }
 
 
@@ -93,7 +92,7 @@ function roll20(){
 
 function attackRoll() {
   roll = roll20();
-return console.log('You strike with a ' + roll)}
+return console.log('You strike with a ' + (roll+character.ab) )}
 
 function attack(){
  return console.log('You deal ' + (Math.ceil(Math.random() * 8) +  character.strmod) + ' damage.');
